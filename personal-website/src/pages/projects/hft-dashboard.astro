@@ -1,0 +1,502 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="HFT Trading Dashboard" description="Real-time monitoring and control for high-frequency trading systems">
+  <div class="dashboard-container">
+    <div class="dashboard-header">
+      <h1>$ ./trading_system --mode=dashboard</h1>
+      <div class="system-status">
+        <span class="status-indicator" id="system-status">●</span>
+        <span>System Status: <span id="status-text">Initializing...</span></span>
+      </div>
+    </div>
+
+    <div class="dashboard-grid">
+      <!-- System Health Panel -->
+      <div class="panel system-health">
+        <h2>System Health</h2>
+        <div class="metrics-grid">
+          <div class="metric">
+            <span class="metric-label">CPU Usage</span>
+            <span class="metric-value" id="cpu-usage">--</span>
+          </div>
+          <div class="metric">
+            <span class="metric-label">Memory</span>
+            <span class="metric-value" id="memory-usage">--</span>
+          </div>
+          <div class="metric">
+            <span class="metric-label">Network</span>
+            <span class="metric-value" id="network-latency">--</span>
+          </div>
+          <div class="metric">
+            <span class="metric-label">Market Data</span>
+            <span class="metric-value" id="market-data-rate">--</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Portfolio Overview -->
+      <div class="panel portfolio">
+        <h2>Portfolio Overview</h2>
+        <div class="portfolio-stats">
+          <div class="stat">
+            <span class="stat-label">Total P&L</span>
+            <span class="stat-value positive" id="total-pnl">$--</span>
+          </div>
+          <div class="stat">
+            <span class="stat-label">Daily P&L</span>
+            <span class="stat-value" id="daily-pnl">$--</span>
+          </div>
+          <div class="stat">
+            <span class="stat-label">Position Count</span>
+            <span class="stat-value" id="position-count">--</span>
+          </div>
+          <div class="stat">
+            <span class="stat-label">Exposure</span>
+            <span class="stat-value" id="exposure">$--</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Active Strategies -->
+      <div class="panel strategies">
+        <h2>Active Strategies</h2>
+        <div class="strategy-list">
+          <div class="strategy-item">
+            <span class="strategy-name">Market Making - SPY</span>
+            <span class="strategy-status running">RUNNING</span>
+          </div>
+          <div class="strategy-item">
+            <span class="strategy-name">Arbitrage - ETF</span>
+            <span class="strategy-status paused">PAUSED</span>
+          </div>
+          <div class="strategy-item">
+            <span class="strategy-name">Momentum - Tech</span>
+            <span class="strategy-status stopped">STOPPED</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Market Data Feed -->
+      <div class="panel market-data">
+        <h2>Market Data Feed</h2>
+        <div class="data-stream">
+          <div class="stream-item">
+            <span class="symbol">SPY</span>
+            <span class="price">$423.45</span>
+            <span class="change positive">+0.12%</span>
+          </div>
+          <div class="stream-item">
+            <span class="symbol">QQQ</span>
+            <span class="price">$367.89</span>
+            <span class="change negative">-0.05%</span>
+          </div>
+          <div class="stream-item">
+            <span class="symbol">IWM</span>
+            <span class="price">$218.76</span>
+            <span class="change positive">+0.23%</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Risk Monitor -->
+      <div class="panel risk-monitor">
+        <h2>Risk Monitor</h2>
+        <div class="risk-metrics">
+          <div class="risk-item">
+            <span class="risk-label">VaR (95%)</span>
+            <span class="risk-value">$25,430</span>
+            <div class="risk-bar">
+              <div class="risk-fill" style="width: 45%;"></div>
+            </div>
+          </div>
+          <div class="risk-item">
+            <span class="risk-label">Max Drawdown</span>
+            <span class="risk-value">-2.34%</span>
+            <div class="risk-bar">
+              <div class="risk-fill" style="width: 23%;"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Trading Log -->
+      <div class="panel trading-log">
+        <h2>Recent Trades</h2>
+        <div class="log-container">
+          <div class="log-entry">
+            <span class="timestamp">14:32:45</span>
+            <span class="action buy">BUY</span>
+            <span class="symbol">SPY</span>
+            <span class="quantity">100</span>
+            <span class="price">$423.44</span>
+          </div>
+          <div class="log-entry">
+            <span class="timestamp">14:31:12</span>
+            <span class="action sell">SELL</span>
+            <span class="symbol">QQQ</span>
+            <span class="quantity">50</span>
+            <span class="price">$367.91</span>
+          </div>
+          <div class="log-entry">
+            <span class="timestamp">14:29:33</span>
+            <span class="action buy">BUY</span>
+            <span class="symbol">IWM</span>
+            <span class="quantity">200</span>
+            <span class="price">$218.75</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dashboard-notice">
+      <h2>⚠️ Development Notice</h2>
+      <p>
+        This dashboard is currently in development. It represents the planned interface for monitoring and controlling 
+        the high-frequency trading system. Real-time data integration will be implemented as the backend trading 
+        system components are completed.
+      </p>
+      <div class="progress-info">
+        <h3>Implementation Roadmap:</h3>
+        <ul>
+          <li>✅ Static dashboard layout and design</li>
+          <li>🔄 WebSocket integration for real-time updates</li>
+          <li>📋 Trading system backend development</li>
+          <li>📋 Risk management integration</li>
+          <li>📋 Historical data visualization</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .dashboard-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+  }
+  
+  .dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--accent);
+  }
+  
+  .system-status {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: 'Fira Code', monospace;
+  }
+  
+  .status-indicator {
+    font-size: 1.2rem;
+    color: #fbbf24;
+    animation: pulse 2s infinite;
+  }
+  
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+  }
+  
+  .dashboard-grid {
+    display: grid;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+  }
+  
+  @media (min-width: 768px) {
+    .dashboard-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .dashboard-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  .panel {
+    border: 1px solid var(--accent);
+    border-radius: 8px;
+    padding: 1.5rem;
+    background: rgba(var(--accent-rgb), 0.03);
+  }
+  
+  .panel h2 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    color: var(--accent);
+    font-size: 1.1rem;
+  }
+  
+  /* System Health Panel */
+  .metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  
+  .metric {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+  
+  .metric-label {
+    font-size: 0.8rem;
+    color: var(--color-secondary);
+  }
+  
+  .metric-value {
+    font-family: 'Fira Code', monospace;
+    font-weight: bold;
+    color: var(--accent);
+  }
+  
+  /* Portfolio Panel */
+  .portfolio-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .stat {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .stat-label {
+    font-size: 0.9rem;
+    color: var(--color-secondary);
+  }
+  
+  .stat-value {
+    font-family: 'Fira Code', monospace;
+    font-weight: bold;
+  }
+  
+  .stat-value.positive {
+    color: #22c55e;
+  }
+  
+  .stat-value.negative {
+    color: #ef4444;
+  }
+  
+  /* Strategies Panel */
+  .strategy-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  
+  .strategy-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem;
+    border-radius: 4px;
+    background: rgba(var(--accent-rgb), 0.05);
+  }
+  
+  .strategy-name {
+    font-size: 0.9rem;
+  }
+  
+  .strategy-status {
+    font-size: 0.7rem;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-weight: bold;
+  }
+  
+  .strategy-status.running {
+    background: #22c55e;
+    color: white;
+  }
+  
+  .strategy-status.paused {
+    background: #f59e0b;
+    color: white;
+  }
+  
+  .strategy-status.stopped {
+    background: #6b7280;
+    color: white;
+  }
+  
+  /* Market Data Panel */
+  .data-stream {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  
+  .stream-item {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    border-radius: 4px;
+    background: rgba(var(--accent-rgb), 0.05);
+    font-family: 'Fira Code', monospace;
+    font-size: 0.9rem;
+  }
+  
+  .symbol {
+    font-weight: bold;
+  }
+  
+  .price {
+    text-align: center;
+  }
+  
+  .change {
+    text-align: right;
+  }
+  
+  .change.positive {
+    color: #22c55e;
+  }
+  
+  .change.negative {
+    color: #ef4444;
+  }
+  
+  /* Risk Monitor Panel */
+  .risk-metrics {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .risk-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .risk-label {
+    font-size: 0.8rem;
+    color: var(--color-secondary);
+  }
+  
+  .risk-value {
+    font-family: 'Fira Code', monospace;
+    font-weight: bold;
+  }
+  
+  .risk-bar {
+    width: 100%;
+    height: 6px;
+    background: rgba(var(--accent-rgb), 0.2);
+    border-radius: 3px;
+    overflow: hidden;
+  }
+  
+  .risk-fill {
+    height: 100%;
+    background: var(--accent);
+    transition: width 0.3s ease;
+  }
+  
+  /* Trading Log Panel */
+  .trading-log {
+    grid-column: span 2;
+  }
+  
+  @media (min-width: 1024px) {
+    .trading-log {
+      grid-column: span 3;
+    }
+  }
+  
+  .log-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .log-entry {
+    display: grid;
+    grid-template-columns: auto auto 1fr auto auto;
+    gap: 1rem;
+    padding: 0.5rem;
+    border-radius: 4px;
+    background: rgba(var(--accent-rgb), 0.05);
+    font-family: 'Fira Code', monospace;
+    font-size: 0.85rem;
+    align-items: center;
+  }
+  
+  .timestamp {
+    color: var(--color-secondary);
+  }
+  
+  .action {
+    padding: 0.2rem 0.5rem;
+    border-radius: 3px;
+    font-weight: bold;
+    font-size: 0.7rem;
+  }
+  
+  .action.buy {
+    background: #22c55e;
+    color: white;
+  }
+  
+  .action.sell {
+    background: #ef4444;
+    color: white;
+  }
+  
+  .symbol {
+    font-weight: bold;
+  }
+  
+  .quantity {
+    text-align: right;
+  }
+  
+  .price {
+    text-align: right;
+  }
+  
+  /* Development Notice */
+  .dashboard-notice {
+    margin-top: 3rem;
+    padding: 2rem;
+    border: 2px solid #f59e0b;
+    border-radius: 8px;
+    background: rgba(245, 158, 11, 0.05);
+  }
+  
+  .dashboard-notice h2 {
+    color: #f59e0b;
+    margin-top: 0;
+  }
+  
+  .progress-info h3 {
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .progress-info ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .progress-info li {
+    padding: 0.25rem 0;
+    font-family: 'Fira Code', monospace;
+  }
+</style>
