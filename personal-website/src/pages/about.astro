@@ -16,6 +16,36 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     </div>
 
     <div class="terminal-section">
+      <h2>## Education</h2>
+      <div class="education-block">
+        <div class="degree">
+          <h3>Master of Engineering</h3>
+          <p><strong>University of California, Berkeley</strong> | Berkeley, CA</p>
+          <p class="focus-area">Focus: Advanced Systems Engineering and Quantitative Methods</p>
+        </div>
+        <div class="degree">
+          <h3>Bachelor of Engineering - Software Engineering</h3>
+          <p><strong>Shanghai Jiao Tong University</strong> | Shanghai, China</p>
+          <p class="focus-area">Focus: Software Engineering with emphasis on High-Performance Computing</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="terminal-section">
+      <h2>## Professional Experience</h2>
+      <div class="experience-block">
+        <div class="company">
+          <img src="/logos/alibaba_logo.png" alt="Alibaba" class="company-logo">
+          <div class="company-details">
+            <h3>Software Engineer</h3>
+            <p><strong>Alibaba Group</strong> | Hangzhou, China</p>
+            <p class="role-description">Developed high-performance distributed systems and contributed to large-scale e-commerce platform optimization</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="terminal-section">
       <h2>## Technical Expertise</h2>
       <div class="code-block">
         <pre><code>{`const skills = {
@@ -145,5 +175,52 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   .contact-links li {
     margin: 0.5rem 0;
     padding-left: 2rem;
+  }
+
+  .education-block, .experience-block {
+    margin: 1rem 0;
+  }
+
+  .degree, .company {
+    margin: 1.5rem 0;
+    padding: 1rem;
+    background: rgba(238, 195, 94, 0.08);
+    border-radius: 6px;
+    border-left: 3px solid var(--accent);
+  }
+
+  .company {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .company-logo {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    border-radius: 4px;
+    background: white;
+    padding: 8px;
+  }
+
+  .company-details {
+    flex: 1;
+  }
+
+  .degree h3, .company h3 {
+    color: var(--accent);
+    margin: 0 0 0.5rem 0;
+    font-size: 1.1rem;
+  }
+
+  .degree p, .company p {
+    margin: 0.25rem 0;
+  }
+
+  .focus-area, .role-description {
+    font-style: italic;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.9rem;
   }
 </style>
