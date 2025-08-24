@@ -1,0 +1,339 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Gallery" description="Billiard, Tennis & Snowboarding Adventures">
+  <div class="gallery-page">
+    <h1>$ ls -la ~/adventures/</h1>
+    <p>Beyond coding and trading systems, I enjoy staying active through various sports and recreational activities.</p>
+    
+    <div class="gallery-grid">
+      <!-- Billiards Section -->
+      <div class="gallery-section">
+        <h2>🎱 Billiards</h2>
+        <div class="activity-card">
+          <div class="placeholder-image billiards">
+            <span>🎱</span>
+            <p>Billiards Action Shot</p>
+          </div>
+          <div class="activity-content">
+            <h3>Precision and Strategy</h3>
+            <p>
+              Like programming, billiards requires precision, strategy, and calculated moves. 
+              The game teaches patience and the importance of thinking several shots ahead - 
+              skills that translate well to algorithmic trading.
+            </p>
+            <div class="skills-tags">
+              <span class="tag">Strategic Thinking</span>
+              <span class="tag">Precision</span>
+              <span class="tag">Focus</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tennis Section -->
+      <div class="gallery-section">
+        <h2>🎾 Tennis</h2>
+        <div class="activity-card">
+          <div class="placeholder-image tennis">
+            <span>🎾</span>
+            <p>Tennis Match</p>
+          </div>
+          <div class="activity-content">
+            <h3>Quick Decisions Under Pressure</h3>
+            <p>
+              Tennis has taught me to make split-second decisions under pressure - 
+              a skill invaluable in high-frequency trading where milliseconds matter. 
+              The sport emphasizes adaptability and quick reflexes.
+            </p>
+            <div class="skills-tags">
+              <span class="tag">Quick Reflexes</span>
+              <span class="tag">Adaptability</span>
+              <span class="tag">Endurance</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Snowboarding Section -->
+      <div class="gallery-section">
+        <h2>🏂 Snowboarding</h2>
+        <div class="activity-card">
+          <div class="placeholder-image snowboarding">
+            <span>🏂</span>
+            <p>Mountain Adventure</p>
+          </div>
+          <div class="activity-content">
+            <h3>Risk Assessment & Balance</h3>
+            <p>
+              Snowboarding combines risk assessment with the thrill of speed. 
+              Each run requires evaluating terrain, conditions, and personal limits - 
+              principles that apply directly to financial risk management.
+            </p>
+            <div class="skills-tags">
+              <span class="tag">Risk Assessment</span>
+              <span class="tag">Balance</span>
+              <span class="tag">Adventure</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="gallery-stats">
+      <h2>$ cat ~/sports_stats.json</h2>
+      <div class="stats-container">
+        <div class="stat-block">
+          <pre><code>{`{
+  "billiards": {
+    "favorite_game": "8-ball",
+    "best_run": "6 balls straight",
+    "playing_since": "2018",
+    "philosophy": "Every shot matters"
+  },
+  "tennis": {
+    "playing_style": "Aggressive baseline",
+    "favorite_surface": "Hard court", 
+    "training_frequency": "2-3x per week",
+    "motto": "Adapt and overcome"
+  },
+  "snowboarding": {
+    "experience": "5+ years",
+    "favorite_terrain": "All-mountain",
+    "best_mountain": "To be conquered",
+    "season_goal": "Master black diamonds"
+  }
+}`}</code></pre>
+        </div>
+      </div>
+    </div>
+
+    <div class="philosophy-section">
+      <h2>## Life Balance Philosophy</h2>
+      <blockquote>
+        "The same principles that make you successful in sports - discipline, strategy, 
+        continuous learning, and risk management - are the foundation of excellence in 
+        technology and finance. Physical activities keep the mind sharp and provide 
+        fresh perspectives for problem-solving."
+      </blockquote>
+      
+      <div class="crossover-skills">
+        <h3>Skills That Cross Over:</h3>
+        <ul>
+          <li><strong>Precision:</strong> Billiards → Code Quality → Trading Execution</li>
+          <li><strong>Quick Decision Making:</strong> Tennis → System Response → Market Timing</li>
+          <li><strong>Risk Assessment:</strong> Snowboarding → Portfolio Management → System Architecture</li>
+          <li><strong>Continuous Improvement:</strong> All Sports → Learning New Technologies → Strategy Optimization</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="upload-notice">
+      <h3>📸 Photo Upload Coming Soon</h3>
+      <p>
+        This gallery currently shows placeholder content. Action shots and videos 
+        from billiards tournaments, tennis matches, and snowboarding adventures 
+        will be added soon to showcase these activities in action.
+      </p>
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .gallery-page {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 1rem;
+  }
+  
+  .gallery-grid {
+    display: grid;
+    gap: 3rem;
+    margin: 3rem 0;
+  }
+  
+  .gallery-section {
+    margin: 2rem 0;
+  }
+  
+  .gallery-section h2 {
+    color: var(--accent);
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+  }
+  
+  .activity-card {
+    display: grid;
+    gap: 2rem;
+    border: 1px solid var(--accent);
+    border-radius: 8px;
+    padding: 2rem;
+    background: rgba(var(--accent-rgb), 0.03);
+  }
+  
+  @media (min-width: 768px) {
+    .activity-card {
+      grid-template-columns: 1fr 1.5fr;
+    }
+  }
+  
+  .placeholder-image {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+    border: 2px dashed var(--accent);
+    border-radius: 8px;
+    background: rgba(var(--accent-rgb), 0.05);
+    color: var(--accent);
+    text-align: center;
+  }
+  
+  .placeholder-image span {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+  
+  .placeholder-image p {
+    margin: 0;
+    font-size: 0.9rem;
+    opacity: 0.8;
+  }
+  
+  .billiards {
+    border-color: #10b981;
+    background: rgba(16, 185, 129, 0.05);
+    color: #10b981;
+  }
+  
+  .tennis {
+    border-color: #f59e0b;
+    background: rgba(245, 158, 11, 0.05);
+    color: #f59e0b;
+  }
+  
+  .snowboarding {
+    border-color: #3b82f6;
+    background: rgba(59, 130, 246, 0.05);
+    color: #3b82f6;
+  }
+  
+  .activity-content h3 {
+    margin-top: 0;
+    color: var(--accent);
+  }
+  
+  .skills-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+  }
+  
+  .tag {
+    background: var(--accent);
+    color: var(--background);
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 500;
+  }
+  
+  .gallery-stats {
+    margin: 3rem 0;
+    padding: 2rem;
+    border-left: 4px solid var(--accent);
+    background: rgba(var(--accent-rgb), 0.05);
+  }
+  
+  .stats-container {
+    margin: 1rem 0;
+  }
+  
+  .stat-block {
+    background: rgba(var(--accent-rgb), 0.1);
+    padding: 1.5rem;
+    border-radius: 8px;
+    overflow-x: auto;
+  }
+  
+  .stat-block pre {
+    margin: 0;
+    font-family: 'Fira Code', monospace;
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+  
+  .philosophy-section {
+    margin: 3rem 0;
+    padding: 2rem;
+    border: 1px solid var(--accent);
+    border-radius: 8px;
+    background: rgba(var(--accent-rgb), 0.03);
+  }
+  
+  .philosophy-section h2 {
+    margin-top: 0;
+    color: var(--accent);
+  }
+  
+  blockquote {
+    border-left: 4px solid var(--accent);
+    padding-left: 1.5rem;
+    margin: 1.5rem 0;
+    font-style: italic;
+    color: var(--accent);
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+  
+  .crossover-skills {
+    margin-top: 2rem;
+  }
+  
+  .crossover-skills h3 {
+    color: var(--accent);
+    margin-bottom: 1rem;
+  }
+  
+  .crossover-skills ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .crossover-skills li {
+    margin: 1rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+    line-height: 1.5;
+  }
+  
+  .crossover-skills li::before {
+    content: "→ ";
+    color: var(--accent);
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+  }
+  
+  .upload-notice {
+    margin-top: 3rem;
+    padding: 1.5rem;
+    border: 2px solid #6b7280;
+    border-radius: 8px;
+    background: rgba(107, 114, 128, 0.05);
+    text-align: center;
+  }
+  
+  .upload-notice h3 {
+    color: #6b7280;
+    margin-top: 0;
+  }
+  
+  .upload-notice p {
+    color: var(--color-secondary);
+    margin-bottom: 0;
+  }
+</style>

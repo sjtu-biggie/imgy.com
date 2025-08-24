@@ -1,0 +1,308 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Projects" description="Portfolio of software engineering and quantitative finance projects">
+  <div class="page">
+    <h1>$ ls -la ~/projects/</h1>
+    <p>A collection of projects showcasing my work in high-performance computing, quantitative finance, and modern web development.</p>
+    
+    <div class="project-grid">
+      <div class="project-card">
+        <h2>High-Frequency Trading System</h2>
+        <div class="project-meta">
+          <span class="tag">C++</span>
+          <span class="tag">React</span>
+          <span class="tag">WebSockets</span>
+          <span class="tag">DPDK</span>
+          <span class="status ongoing">In Development</span>
+        </div>
+        <p>
+          A comprehensive low-latency trading system with real-time monitoring capabilities. 
+          Features kernel-bypass networking, microsecond-level market data processing, and 
+          a web-based control dashboard.
+        </p>
+        <div class="project-features">
+          <ul>
+            <li>Ultra-low latency market data ingestion</li>
+            <li>Real-time strategy execution and monitoring</li>
+            <li>Comprehensive backtesting framework</li>
+            <li>Risk management and portfolio tracking</li>
+          </ul>
+        </div>
+        <div class="project-actions">
+          <a href="/projects/hft-dashboard" class="dashboard-link">📊 View Dashboard</a>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <h2>Portfolio Website & Control Center</h2>
+        <div class="project-meta">
+          <span class="tag">Astro</span>
+          <span class="tag">TypeScript</span>
+          <span class="tag">Modern CSS</span>
+          <span class="status completed">Live</span>
+        </div>
+        <p>
+          This very website - a modern portfolio built with Astro's "Islands Architecture" 
+          that serves both as a professional showcase and a control interface for trading systems.
+        </p>
+        <div class="project-features">
+          <ul>
+            <li>Static-first performance with dynamic islands</li>
+            <li>Terminal-inspired design aesthetic</li>
+            <li>Integrated trading dashboard</li>
+            <li>Zero-cost hosting on Vercel</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <h2>Market Microstructure Analyzer</h2>
+        <div class="project-meta">
+          <span class="tag">Python</span>
+          <span class="tag">NumPy</span>
+          <span class="tag">Data Analysis</span>
+          <span class="status planned">Planned</span>
+        </div>
+        <p>
+          A comprehensive toolkit for analyzing tick-by-tick market data, order book dynamics, 
+          and market microstructure patterns. Designed to inform trading strategy development.
+        </p>
+        <div class="project-features">
+          <ul>
+            <li>High-frequency data visualization</li>
+            <li>Order book reconstruction and analysis</li>
+            <li>Liquidity and volatility modeling</li>
+            <li>Pattern recognition algorithms</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <h2>Risk Management Framework</h2>
+        <div class="project-meta">
+          <span class="tag">C++</span>
+          <span class="tag">Python</span>
+          <span class="tag">Mathematical Modeling</span>
+          <span class="status planned">Planned</span>
+        </div>
+        <p>
+          A robust risk management system implementing modern portfolio theory, 
+          VaR calculations, and real-time position monitoring with automated risk controls.
+        </p>
+        <div class="project-features">
+          <ul>
+            <li>Real-time portfolio risk assessment</li>
+            <li>Monte Carlo simulation engine</li>
+            <li>Automated position sizing</li>
+            <li>Stress testing capabilities</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-stats">
+      <h2>$ git log --oneline --graph</h2>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <h3>Languages</h3>
+          <ul>
+            <li>C++ (Performance-critical components)</li>
+            <li>Python (Analysis and backtesting)</li>
+            <li>JavaScript/TypeScript (Web interfaces)</li>
+            <li>SQL (Data management)</li>
+          </ul>
+        </div>
+        <div class="stat-card">
+          <h3>Technologies</h3>
+          <ul>
+            <li>DPDK (Kernel-bypass networking)</li>
+            <li>ZeroMQ (High-speed IPC)</li>
+            <li>React (Interactive dashboards)</li>
+            <li>Astro (Static site generation)</li>
+          </ul>
+        </div>
+        <div class="stat-card">
+          <h3>Focus Areas</h3>
+          <ul>
+            <li>Ultra-low latency systems</li>
+            <li>Real-time data processing</li>
+            <li>Quantitative finance</li>
+            <li>Modern web development</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .page {
+    max-width: 960px;
+    margin: 0 auto;
+  }
+  
+  .project-grid {
+    display: grid;
+    gap: 2rem;
+    margin: 2rem 0;
+  }
+  
+  @media (min-width: 768px) {
+    .project-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  .project-card {
+    border: 1px solid var(--accent);
+    border-radius: 8px;
+    padding: 1.5rem;
+    background: rgba(var(--accent-rgb), 0.02);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .project-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(var(--accent-rgb), 0.15);
+  }
+  
+  .project-card h2 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
+  
+  .project-card h2 a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+  
+  .project-card h2 a:hover {
+    text-decoration: underline;
+  }
+  
+  .project-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    align-items: center;
+  }
+  
+  .tag {
+    background: var(--accent);
+    color: var(--background);
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 500;
+  }
+  
+  .status {
+    padding: 0.25rem 0.75rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+  
+  .status.completed {
+    background: #22c55e;
+    color: white;
+  }
+  
+  .status.ongoing {
+    background: #f59e0b;
+    color: white;
+  }
+  
+  .status.planned {
+    background: #6b7280;
+    color: white;
+  }
+  
+  .project-features ul {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0 0 0;
+  }
+  
+  .project-features li {
+    padding: 0.25rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+  }
+  
+  .project-features li::before {
+    content: "→ ";
+    color: var(--accent);
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+  }
+  
+  .project-stats {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 2px solid var(--accent);
+  }
+  
+  .stats-grid {
+    display: grid;
+    gap: 2rem;
+    margin: 2rem 0;
+  }
+  
+  @media (min-width: 768px) {
+    .stats-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  .stat-card {
+    padding: 1.5rem;
+    border-left: 4px solid var(--accent);
+    background: rgba(var(--accent-rgb), 0.05);
+  }
+  
+  .stat-card h3 {
+    margin-top: 0;
+    color: var(--accent);
+  }
+  
+  .stat-card ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .stat-card li {
+    padding: 0.25rem 0;
+    font-size: 0.9rem;
+  }
+  
+  .project-actions {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(var(--accent-rgb), 0.2);
+  }
+  
+  .dashboard-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: var(--accent);
+    color: var(--background);
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .dashboard-link:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(var(--accent-rgb), 0.3);
+  }
+</style>

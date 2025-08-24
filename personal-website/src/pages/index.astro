@@ -1,0 +1,73 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Personal Portfolio" description="Software Engineer & Quantitative Trading Enthusiast">
+  <div class="index-content framed">
+    <h1 id="hello-there">$ whoami</h1>
+    <p>Welcome to my digital workspace. I'm Gen Yang, a software engineer with a passion for building high-performance systems and exploring quantitative finance.</p>
+    
+    <div class="terminal-block">
+      <h2>$ ls -la ~/skills</h2>
+      <ul class="skill-list">
+        <li><strong>Languages:</strong> C++, Python, JavaScript, TypeScript</li>
+        <li><strong>Systems:</strong> Low-latency trading systems, High-frequency data processing</li>
+        <li><strong>Web:</strong> Full-stack development, Modern web frameworks</li>
+        <li><strong>Finance:</strong> Algorithmic trading, Market microstructure, Risk management</li>
+      </ul>
+    </div>
+
+    <div class="terminal-block">
+      <h2>$ cat ~/current_projects.txt</h2>
+      <p>Currently working on building a comprehensive trading system with real-time monitoring capabilities. This portfolio site serves as both a professional showcase and a control center for my quantitative trading experiments.</p>
+    </div>
+
+    <div class="navigation-links">
+      <h2>$ find . -name "*.page"</h2>
+      <ul class="link-list">
+        <li><a href="/about">./about.page</a> - More about my background and experience</li>
+        <li><a href="/projects">./projects/</a> - Portfolio of completed and ongoing projects</li>
+        <li><a href="/gallery">./gallery.page</a> - Sports and recreational activities</li>
+      </ul>
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .terminal-block {
+    margin: 2rem 0;
+    padding: 1rem;
+    border: 1px solid var(--accent);
+    border-radius: 4px;
+  }
+  
+  .skill-list, .link-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .skill-list li, .link-list li {
+    margin: 0.5rem 0;
+    padding-left: 1rem;
+  }
+  
+  .skill-list li::before {
+    content: "├─ ";
+    color: var(--accent);
+    font-weight: bold;
+    margin-left: -1rem;
+    margin-right: 0.5rem;
+  }
+  
+  .link-list li::before {
+    content: "└── ";
+    color: var(--accent);
+    font-weight: bold;
+    margin-left: -1rem;
+    margin-right: 0.5rem;
+  }
+  
+  .navigation-links {
+    margin-top: 2rem;
+  }
+</style>

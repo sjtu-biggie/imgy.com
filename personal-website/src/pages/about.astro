@@ -1,0 +1,149 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="About" description="Background and experience in software engineering and quantitative finance">
+  <div class="page">
+    <h1>$ cat ~/about.md</h1>
+    
+    <div class="terminal-section">
+      <h2>## About Gen Yang</h2>
+      <p>
+        I'm Gen Yang, a software engineer with a deep fascination for high-performance computing and quantitative finance. 
+        My journey began with traditional software development, but I've progressively moved toward the intersection 
+        of technology and finance, where microseconds matter and precision is paramount.
+      </p>
+    </div>
+
+    <div class="terminal-section">
+      <h2>## Technical Expertise</h2>
+      <div class="code-block">
+        <pre><code>{`const skills = {
+  languages: ["C++", "Python", "JavaScript", "TypeScript"],
+  systems: {
+    lowLatency: "Ultra-fast market data processing",
+    networking: "DPDK, kernel-bypass optimization", 
+    storage: "High-performance I/O with io_uring"
+  },
+  web: {
+    frontend: ["React", "Astro", "Modern CSS"],
+    backend: ["Node.js", "RESTful APIs", "WebSockets"],
+    deployment: ["Vercel", "CI/CD workflows"]
+  },
+  finance: {
+    trading: "Algorithmic strategy development",
+    data: "Tick-by-tick market analysis",
+    risk: "Portfolio optimization and risk management"
+  }
+};`}</code></pre>
+      </div>
+    </div>
+
+    <div class="terminal-section">
+      <h2>## Current Focus</h2>
+      <p>
+        I'm currently building a comprehensive high-frequency trading system that combines cutting-edge 
+        C++ performance with modern web technologies. This project serves as both a learning endeavor 
+        and a practical exploration of ultra-low-latency systems engineering.
+      </p>
+      
+      <ul class="focus-list">
+        <li><strong>Low-Latency Systems:</strong> Implementing kernel-bypass networking with DPDK for microsecond-level market data processing</li>
+        <li><strong>Backtesting Framework:</strong> Developing high-fidelity simulation capabilities with realistic market microstructure modeling</li>
+        <li><strong>Real-time Monitoring:</strong> Creating web-based dashboards for system performance and trading metrics</li>
+        <li><strong>Risk Management:</strong> Building comprehensive portfolio monitoring and risk assessment tools</li>
+      </ul>
+    </div>
+
+    <div class="terminal-section">
+      <h2>## Philosophy</h2>
+      <blockquote>
+        "In the world of high-frequency trading, every nanosecond counts. But beyond raw speed, 
+        it's the elegance of the solution and the robustness of the system that truly matter."
+      </blockquote>
+    </div>
+
+    <div class="terminal-section">
+      <h2>## Get in Touch</h2>
+      <p>
+        Interested in discussing low-latency systems, quantitative finance, or modern web development? 
+        Feel free to reach out through any of the channels below.
+      </p>
+      
+      <div class="contact-links">
+        <p><code>$ find ~/contact -type f</code></p>
+        <ul>
+          <li>📧 <strong>Email:</strong> gen.yang@example.com</li>
+          <li>💻 <strong>GitHub:</strong> github.com/genyang</li>
+          <li>🔗 <strong>LinkedIn:</strong> linkedin.com/in/gen-yang</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .page {
+    max-width: 760px;
+    margin: 0 auto;
+  }
+  
+  .terminal-section {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    border-left: 3px solid var(--accent);
+    background: rgba(238, 195, 94, 0.05);
+  }
+  
+  .code-block {
+    background: rgba(238, 195, 94, 0.1);
+    padding: 1rem;
+    border-radius: 4px;
+    margin: 1rem 0;
+    overflow-x: auto;
+  }
+  
+  .code-block pre {
+    margin: 0;
+    font-family: 'Fira Code', monospace;
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+  
+  .focus-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .focus-list li {
+    margin: 1rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+  }
+  
+  .focus-list li::before {
+    content: "▶ ";
+    color: var(--accent);
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+  }
+  
+  blockquote {
+    border-left: 4px solid var(--accent);
+    padding-left: 1rem;
+    margin: 1.5rem 0;
+    font-style: italic;
+    color: var(--accent);
+  }
+  
+  .contact-links ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .contact-links li {
+    margin: 0.5rem 0;
+    padding-left: 2rem;
+  }
+</style>
